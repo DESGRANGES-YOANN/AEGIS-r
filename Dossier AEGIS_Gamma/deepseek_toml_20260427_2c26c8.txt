@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aegis-gamma"
+version = "4.0.0"
+description = "Système de contrôle narratif pour la détection de brouillage informationnel"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Votre Nom", email = "votre.email@example.com"}]
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1.24.0",
+    "matplotlib>=3.7.0",
+]
+
+[project.optional-dependencies]
+ml = ["torch>=2.0.0", "transformers>=4.30.0"]
+dev = ["pytest>=7.4.0", "pytest-cov>=4.1.0", "black>=23.0.0"]
+
+[project.urls]
+Homepage = "https://github.com/votrecompte/aegis-gamma"
+Repository = "https://github.com/votrecompte/aegis-gamma.git"
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --cov=aegis_gamma --cov-report=term"

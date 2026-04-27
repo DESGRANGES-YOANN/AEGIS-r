@@ -1,0 +1,1 @@
+python -m aegis_gamma.cli.main --demo
